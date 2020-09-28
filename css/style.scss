@@ -1,0 +1,300 @@
+/*===========================Some SCSS Imports========================*/
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+/*===========================Some SCSS Variable========================*/
+
+$bg-color: #2c3e50;
+$hover-color: #4b4444;
+$highlight: red;
+$text-color: #000;
+$f-f: 'Heebo', sans-serif;
+
+/*===========================Global SCSS========================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: $f-f;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+
+/*===========================navbar SCSS========================*/
+
+.main-nav {
+  background-color: #fff !important;
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navbar-brand {
+  text-transform: capitalize;
+  font-size: 2rem;
+  font-weight: 700;
+  word-spacing: -5px;
+  span {
+    color: $highlight;
+  }
+}
+.navbar-nav {
+  text-transform: uppercase;
+
+  .nav-item {
+    padding-right: 3rem;
+    position: relative;
+
+    .nav-link {
+      color: $text-color !important;
+    }
+  }
+
+  .nav-item:hover:before,
+  .active.nav-item::before {
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-left: 2px solid #000;
+    border-top: 2px solid #000;
+    top: 5px;
+  }
+  .nav-item:hover:after,
+  .active.nav-item::after {
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-bottom: 2px solid #000;
+    border-right: 2px solid #000;
+    right: 45px;
+    bottom: 6px;
+  }
+  /*=======service dropdown*/
+
+  .active > .dropdown-menu,
+  .drop-menu:hover .dropdown-menu {
+    display: flex;
+    margin-top: 0px;
+  }
+
+  .dropdown-menu {
+    width: 60rem;
+    left: -396%;
+    right: 323px;
+    display: none;
+    justify-content: space-around;
+    .sub-menu {
+      text-align: left;
+      border-right: 1px solid #aaa3a3;
+      padding-right: 1rem;
+      padding-left: 1rem;
+
+      ul li {
+        padding-top: 1rem;
+
+        a {
+          color: $hover-color;
+          i {
+            padding-right: 10px;
+          }
+        }
+        a:hover {
+          // color: $hover-color * 0.3;
+          color: $highlight;
+          text-decoration: none;
+        }
+      }
+    }
+    .sub-menu:last-child {
+      border-right: none !important;
+    }
+  }
+
+  /*=======end of service dropdown*/
+}
+/*=======footer css*/
+footer {
+  margin-top: 35rem;
+  background-color: $bg-color;
+  color: #fff;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    padding-top: 2rem;
+    text-transform: capitalize;
+    ul li {
+      padding-top: 1rem;
+    }
+    a:hover {
+      color: grey;
+    }
+  }
+
+  .social ul li {
+    display: inline-block;
+    margin-right: 10px;
+    color: $hover-color * 2.7;
+    a i {
+      // padding: ;
+
+      font-size: 1.5rem;
+      transition: all 0.3s linear;
+    }
+    a:hover i {
+      transform: scale(1.5);
+      color: #3498db;
+      background-color: white;
+      border-radius: 25%;
+    }
+  }
+  .copy-right {
+    text-align: center;
+    padding-bottom: 1rem;
+    p {
+      color: beige;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+  }
+}
+/*=======end of footer css*/
+
+///////form
+
+form {
+  position: fixed;
+  width: 400px;
+  // margin: auto;
+  right: 0%;
+  background-color: $bg-color;
+  padding: 20px;
+  color: #fff;
+  bottom: 6rem;
+  display: none;
+}
+.close-btn {
+  font-size: 2rem;
+  position: absolute;
+  left: 4px;
+  top: -11px;
+  cursor: pointer;
+}
+.pop-up-btn {
+  font-size: 3rem;
+  color: $highlight * 0.7;
+  bottom: 10px;
+  right: 10px;
+  position: fixed;
+  cursor: pointer;
+}
+
+////end form
+
+/*===========================end of navbar SCSS========================*/
+/*=======media query */
+@media (max-width: 991px) {
+  /*======== navbar responsiveee*/
+  .show {
+    left: 0 !important;
+  }
+  .main-nav nav {
+    position: initial;
+  }
+
+  .nav-item:hover:before,
+  .active.nav-item::before {
+    content: '';
+    border: none !important;
+  }
+  .nav-item:hover:after,
+  .active.nav-item::after {
+    content: '';
+    border: none !important;
+  }
+  .nav-item {
+    position: initial !important;
+  }
+  .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    border: none !important;
+    width: 0 !important;
+    padding-left: 15px;
+
+    .sub-menu {
+      padding-left: 0 !important;
+      border: none !important;
+
+      h3 {
+        color: #e74c3c !important;
+        font-size: 1rem;
+        margin-top: 1rem;
+      }
+      ul {
+        padding-left: 1rem;
+      }
+      ul li {
+        padding-top: 4px !important;
+        line-height: 22px !important;
+        font-size: 12px !important;
+      }
+      ul li a {
+        font-size: 0.9rem !important;
+      }
+    }
+  }
+
+  .collapse {
+    justify-content: start !important;
+    left: -100%;
+    position: absolute;
+    top: 4rem;
+    transition: all 0.5s ease-in-out;
+
+    .navbar-nav {
+      height: 100%;
+
+      padding-left: 2rem;
+
+      background: #2c3e50;
+      padding-bottom: 15rem;
+      text-align: left;
+      transition: all 0.5s linear;
+      .nav-link {
+        color: #fff !important;
+      }
+      .dropdown-menu {
+        background: transparent;
+        h3,
+        ul li a {
+          color: #fff;
+        }
+        h3 {
+          font-size: 1rem !important;
+        }
+        ul li a {
+          font-size: 12px !important;
+        }
+        ul li a:hover {
+          color: #aaa3a3;
+        }
+      }
+    }
+  }
+  /*======== end of navbar responsiveee*/
+  footer .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

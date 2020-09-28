@@ -1,0 +1,316 @@
+/*===========================Some SCSS Imports========================*/
+@import url("https://fonts.googleapis.com/css2?family=Heebo&display=swap");
+/*===========================Some SCSS Variable========================*/
+/*===========================Global SCSS========================*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Heebo", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/*===========================navbar SCSS========================*/
+.main-nav {
+  background-color: #fff !important;
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar-brand {
+  text-transform: capitalize;
+  font-size: 2rem;
+  font-weight: 700;
+  word-spacing: -5px;
+}
+
+.navbar-brand span {
+  color: red;
+}
+
+.navbar-nav {
+  text-transform: uppercase;
+  /*=======service dropdown*/
+  /*=======end of service dropdown*/
+}
+
+.navbar-nav .nav-item {
+  padding-right: 3rem;
+  position: relative;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #000 !important;
+}
+
+.navbar-nav .nav-item:hover:before,
+.navbar-nav .active.nav-item::before {
+  position: absolute;
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-left: 2px solid #000;
+  border-top: 2px solid #000;
+  top: 5px;
+}
+
+.navbar-nav .nav-item:hover:after,
+.navbar-nav .active.nav-item::after {
+  position: absolute;
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-bottom: 2px solid #000;
+  border-right: 2px solid #000;
+  right: 45px;
+  bottom: 6px;
+}
+
+.navbar-nav .active > .dropdown-menu,
+.navbar-nav .drop-menu:hover .dropdown-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0px;
+}
+
+.navbar-nav .dropdown-menu {
+  width: 60rem;
+  left: -396%;
+  right: 323px;
+  display: none;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.navbar-nav .dropdown-menu .sub-menu {
+  text-align: left;
+  border-right: 1px solid #aaa3a3;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.navbar-nav .dropdown-menu .sub-menu ul li {
+  padding-top: 1rem;
+}
+
+.navbar-nav .dropdown-menu .sub-menu ul li a {
+  color: #4b4444;
+}
+
+.navbar-nav .dropdown-menu .sub-menu ul li a i {
+  padding-right: 10px;
+}
+
+.navbar-nav .dropdown-menu .sub-menu ul li a:hover {
+  color: red;
+  text-decoration: none;
+}
+
+.navbar-nav .dropdown-menu .sub-menu:last-child {
+  border-right: none !important;
+}
+
+/*=======footer css*/
+footer {
+  margin-top: 35rem;
+  background-color: #2c3e50;
+  color: #fff;
+}
+
+footer .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  padding-top: 2rem;
+  text-transform: capitalize;
+}
+
+footer .container ul li {
+  padding-top: 1rem;
+}
+
+footer .container a:hover {
+  color: grey;
+}
+
+footer .social ul li {
+  display: inline-block;
+  margin-right: 10px;
+  color: #cbb8b8;
+}
+
+footer .social ul li a i {
+  font-size: 1.5rem;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+footer .social ul li a:hover i {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  color: #3498db;
+  background-color: white;
+  border-radius: 25%;
+}
+
+footer .copy-right {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+footer .copy-right p {
+  color: beige;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+/*=======end of footer css*/
+form {
+  position: fixed;
+  width: 400px;
+  right: 0%;
+  background-color: #2c3e50;
+  padding: 20px;
+  color: #fff;
+  bottom: 6rem;
+  display: none;
+}
+
+.close-btn {
+  font-size: 2rem;
+  position: absolute;
+  left: 4px;
+  top: -11px;
+  cursor: pointer;
+}
+
+.pop-up-btn {
+  font-size: 3rem;
+  color: #b30000;
+  bottom: 10px;
+  right: 10px;
+  position: fixed;
+  cursor: pointer;
+}
+
+/*===========================end of navbar SCSS========================*/
+/*=======media query */
+@media (max-width: 991px) {
+  /*======== navbar responsiveee*/
+  .show {
+    left: 0 !important;
+  }
+  .main-nav nav {
+    position: initial;
+  }
+  .nav-item:hover:before,
+  .active.nav-item::before {
+    content: '';
+    border: none !important;
+  }
+  .nav-item:hover:after,
+  .active.nav-item::after {
+    content: '';
+    border: none !important;
+  }
+  .nav-item {
+    position: initial !important;
+  }
+  .dropdown-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border: none !important;
+    width: 0 !important;
+    padding-left: 15px;
+  }
+  .dropdown-menu .sub-menu {
+    padding-left: 0 !important;
+    border: none !important;
+  }
+  .dropdown-menu .sub-menu h3 {
+    color: #e74c3c !important;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  .dropdown-menu .sub-menu ul {
+    padding-left: 1rem;
+  }
+  .dropdown-menu .sub-menu ul li {
+    padding-top: 4px !important;
+    line-height: 22px !important;
+    font-size: 12px !important;
+  }
+  .dropdown-menu .sub-menu ul li a {
+    font-size: 0.9rem !important;
+  }
+  .collapse {
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: start !important;
+    left: -100%;
+    position: absolute;
+    top: 4rem;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .collapse .navbar-nav {
+    height: 100%;
+    padding-left: 2rem;
+    background: #2c3e50;
+    padding-bottom: 15rem;
+    text-align: left;
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+  }
+  .collapse .navbar-nav .nav-link {
+    color: #fff !important;
+  }
+  .collapse .navbar-nav .dropdown-menu {
+    background: transparent;
+  }
+  .collapse .navbar-nav .dropdown-menu h3,
+  .collapse .navbar-nav .dropdown-menu ul li a {
+    color: #fff;
+  }
+  .collapse .navbar-nav .dropdown-menu h3 {
+    font-size: 1rem !important;
+  }
+  .collapse .navbar-nav .dropdown-menu ul li a {
+    font-size: 12px !important;
+  }
+  .collapse .navbar-nav .dropdown-menu ul li a:hover {
+    color: #aaa3a3;
+  }
+  /*======== end of navbar responsiveee*/
+  footer .container {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+/*# sourceMappingURL=style.css.map */
